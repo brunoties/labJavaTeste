@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 
 import org.primefaces.model.chart.ChartModel;
 
+import com.caelum.argentum.indicadores.IndicadorAbertura;
 import com.caelum.argentum.modelo.Candle;
 import com.caelum.argentum.modelo.CandlestickFactory;
 import com.caelum.argentum.modelo.ClienteWebService;
@@ -36,7 +37,7 @@ public class ArgentumBean implements Serializable{
 		
 		GeradorDeGrafico grafico = new GeradorDeGrafico(serie, 2, serie.getUltimaPosicao());
 		
-		grafico.plota(new MediaMovelSimples());
+		grafico.plota(new MediaMovelSimples(new IndicadorAbertura()));
 		
 		this.modeloGrafico = grafico.getModelo();
 
