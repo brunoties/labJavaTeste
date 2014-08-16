@@ -35,6 +35,8 @@ public class ArgentumBean implements Serializable{
 		
 		GeradorDeGrafico grafico = new GeradorDeGrafico(serie, 2, serie.getUltimaPosicao());
 		
+		grafico.plota();
+		
 		this.modeloGrafico = grafico.getModelo();
 
 	}
@@ -47,9 +49,9 @@ public class ArgentumBean implements Serializable{
 		return modeloGrafico;
 	}
 
-	public void setModeloGrafico(ChartModel modeloGrafico) {
-		this.modeloGrafico = modeloGrafico;
-	}
+//	public void setModeloGrafico(ChartModel modeloGrafico) {
+//		this.modeloGrafico = modeloGrafico;
+//	}
 	
 	
 
