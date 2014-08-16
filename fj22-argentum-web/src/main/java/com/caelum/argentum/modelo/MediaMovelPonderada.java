@@ -1,6 +1,8 @@
 package com.caelum.argentum.modelo;
 
-public class MediaMovelPonderada {
+import com.caelum.argentum.indicadores.Indicador;
+
+public class MediaMovelPonderada implements Indicador {
 	
 	public double calcula(int posicao, SerieTemporal serie) {
 		
@@ -14,6 +16,11 @@ public class MediaMovelPonderada {
 		}
 		
 		return soma / 6;
+	}
+	
+	@Override
+	public String toString() {
+		return "MMP de Fechamento";
 	}
 
 }

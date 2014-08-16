@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.caelum.argentum.indicadores.Indicador;
 import com.caelum.argentum.modelo.MediaMovelSimples;
 import com.caelum.argentum.modelo.SerieTemporal;
 
@@ -14,7 +15,7 @@ public class MediaMovelPonderadaTest {
 
 		SerieTemporal serie = GeradorDeSerie.criaSerie(1, 2, 3, 4, 3, 4, 5, 4, 3);
 		
-		MediaMovelSimples mms = new MediaMovelSimples();
+		Indicador mms = new MediaMovelSimples();
 		
 		assertEquals(2.0, mms.calcula(2, serie), 0.00001);
 		assertEquals(3.0, mms.calcula(3, serie), 0.00001);

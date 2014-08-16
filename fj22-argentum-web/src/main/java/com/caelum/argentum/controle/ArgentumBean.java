@@ -12,6 +12,7 @@ import org.primefaces.model.chart.ChartModel;
 import com.caelum.argentum.modelo.Candle;
 import com.caelum.argentum.modelo.CandlestickFactory;
 import com.caelum.argentum.modelo.ClienteWebService;
+import com.caelum.argentum.modelo.MediaMovelSimples;
 import com.caelum.argentum.modelo.Negociacao;
 import com.caelum.argentum.modelo.SerieTemporal;
 
@@ -35,7 +36,7 @@ public class ArgentumBean implements Serializable{
 		
 		GeradorDeGrafico grafico = new GeradorDeGrafico(serie, 2, serie.getUltimaPosicao());
 		
-		grafico.plota();
+		grafico.plota(new MediaMovelSimples());
 		
 		this.modeloGrafico = grafico.getModelo();
 

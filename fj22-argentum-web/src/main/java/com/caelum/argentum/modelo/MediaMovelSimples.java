@@ -1,7 +1,9 @@
 package com.caelum.argentum.modelo;
 
-public class MediaMovelSimples {
-	
+import com.caelum.argentum.indicadores.Indicador;
+
+public class MediaMovelSimples implements Indicador {
+
 	public double calcula(int posicao, SerieTemporal serie) {
 		
 		double soma = 0.0;
@@ -10,6 +12,11 @@ public class MediaMovelSimples {
 		}
 		
 		return soma / 3;
+	}
+	
+	@Override
+	public String toString() {
+		return "MMS de Fechamento";
 	}
 
 }

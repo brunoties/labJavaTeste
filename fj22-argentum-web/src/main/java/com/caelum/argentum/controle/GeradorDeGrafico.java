@@ -4,7 +4,7 @@ import org.primefaces.model.chart.CartesianChartModel;
 import org.primefaces.model.chart.ChartModel;
 import org.primefaces.model.chart.LineChartSeries;
 
-import com.caelum.argentum.modelo.MediaMovelSimples;
+import com.caelum.argentum.indicadores.Indicador;
 import com.caelum.argentum.modelo.SerieTemporal;
 
 public class GeradorDeGrafico {
@@ -21,14 +21,12 @@ public class GeradorDeGrafico {
 		this.fim = fim;
 	}
 	
-	public void plota() {
+	public void plota(Indicador indicador) {
 		
-		LineChartSeries linhas = new LineChartSeries("MMS");
-		
-		MediaMovelSimples mms = new MediaMovelSimples();
-		
+		LineChartSeries linhas = new LineChartSeries(indicador.toString());
+				
 		for(int i = inicio; i <= fim; i++) {
-			linhas.set(i, mms.calcula(i, this.serie));
+			linhas.set(i, indicador.calcula(i, this.serie));
 		}
 		
 		this.modelo.addSeries(linhas);
