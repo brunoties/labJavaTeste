@@ -11,8 +11,8 @@ public class CandlestickBuilder {
 	private double volume;
 	private Calendar data;
 	
-	public Candlestick candlestickBuilder() {
-		return new Candlestick(precoAbertura, precoFechamento, precoMinimo, 
+	public Candle candlestickBuilder() {
+		return new Candle(precoAbertura, precoFechamento, precoMinimo, 
 				precoMaximo, volume, data);
 	}
 	

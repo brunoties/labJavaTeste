@@ -21,6 +21,9 @@ public final class Negociacao {
 		this.data = data;
 	}
 	
+//	public Negociacao() {
+//	}
+	
 	public double getVolume() {
 		return this.preco * this.quantidade;
 	}

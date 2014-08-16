@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.caelum.argentum.modelo.Candlestick;
+import com.caelum.argentum.modelo.Candle;
 import com.caelum.argentum.modelo.CandlestickFactory;
 import com.caelum.argentum.modelo.Negociacao;
 import com.caelum.argentum.modelo.NegociacaoBuilder;
@@ -55,7 +55,7 @@ public class CandlestickFactoryTeste {
 		
 		CandlestickFactory candlestickFactory = new CandlestickFactory();
 		
-		List<Candlestick> candlesticks = candlestickFactory.contruirCandlestick(negociacoes);
+		List<Candle> candlesticks = candlestickFactory.contruirCandlestick(negociacoes);
 		
 
 	}
@@ -89,7 +89,7 @@ public class CandlestickFactoryTeste {
 
 		CandlestickFactory candlestickFactory = new CandlestickFactory();
 
-		Candlestick candlestick = candlestickFactory.contruirCandlestick(hoje,
+		Candle candlestick = candlestickFactory.contruirCandlestick(hoje,
 				negociacoes);
 
 		Assert.assertEquals(numInicial * numVariacao,
@@ -137,7 +137,7 @@ public class CandlestickFactoryTeste {
 
 		CandlestickFactory candlestickFactory = new CandlestickFactory();
 
-		Candlestick candlestick = candlestickFactory.contruirCandlestick(hoje,
+		Candle candlestick = candlestickFactory.contruirCandlestick(hoje,
 				negociacoes);
 
 		Assert.assertEquals(numInicial * numVariacao,
@@ -185,7 +185,7 @@ public class CandlestickFactoryTeste {
 
 		CandlestickFactory candlestickFactory = new CandlestickFactory();
 
-		Candlestick candlestick = candlestickFactory.contruirCandlestick(hoje,
+		Candle candlestick = candlestickFactory.contruirCandlestick(hoje,
 				negociacoes);
 
 		Assert.assertEquals(numInicial * numVariacao,
@@ -233,7 +233,7 @@ public class CandlestickFactoryTeste {
 
 		CandlestickFactory candlestickFactory = new CandlestickFactory();
 
-		Candlestick candlestick = candlestickFactory.contruirCandlestick(hoje,
+		Candle candlestick = candlestickFactory.contruirCandlestick(hoje,
 				negociacoes);
 
 		Assert.assertEquals(volume, candlestick.getVolume(), delta);

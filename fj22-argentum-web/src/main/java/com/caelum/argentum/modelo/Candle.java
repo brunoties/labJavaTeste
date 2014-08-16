@@ -3,7 +3,7 @@ package com.caelum.argentum.modelo;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public final class Candlestick {
+public final class Candle {
 	
 	private final double precoAbertura;
 	private final double precoFechamento;
@@ -12,7 +12,7 @@ public final class Candlestick {
 	private final double volume;
 	private final Calendar data;
 	
-	public Candlestick(double precoAbertura, double precoFechamento,
+	public Candle(double precoAbertura, double precoFechamento,
 			double precoMinimo, double precoMaximo, double volume, Calendar data) {
 		this.precoAbertura = precoAbertura;
 		this.precoFechamento = precoFechamento;

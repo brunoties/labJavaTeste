@@ -1,19 +1,13 @@
 package com.caelum.argentum.modelo;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import com.caelum.argentum.util.LeitorXML;
-
 public class CandlestickFactory {
 	
-	public Candlestick contruirCandlestick(Calendar data, 
+	public Candle contruirCandlestick(Calendar data, 
 		List<Negociacao> negociacoes) {
 		
 		double precoAbertura = negociacoes.isEmpty() ? 
@@ -57,15 +51,41 @@ public class CandlestickFactory {
 		
 	}
 
-	public List<Candlestick> contruirCandlestick(List<Negociacao> negociacoes) throws IOException {
+	public List<Candle> contruirCandlestick(List<Negociacao> negociacoes) throws IOException {
 		
-		List<Candlestick> candlesticks = new ArrayList<Candlestick>();
+		List<Candle> candlesticks = new ArrayList<Candle>();
 		
 		List<Negociacao> negociacoesDoDia = new ArrayList<Negociacao>();
 		
+		Calendar dataInicial = negociacoes.get(0).getData();
 		
+		for(Negociacao n : negociacoes) {
+			
+			if(!n.isMesmoDia(dataInicial)) {
+				
+				Candle candleDoDia = contruirCandlestick(dataInicial, negociacoesDoDia);
+				
+				candlesticks.add(candleDoDia);
+				
+				negociacoesDoDia = new ArrayList<Negociacao>();
+				
+				dataInicial = n.getData();
+				
+			}
+			
+			negociacoesDoDia.add(n);
+			
+		}
 		
-		return null;
+		Candle candleDoDia = contruirCandlestick(dataInicial, negociacoesDoDia);
+		
+		candlesticks.add(candleDoDia);
+		
+		return candlesticks;
+	}
+
+	private void criandoCandlestickElegante() {
+		List<Negociacao> negociacoesDoDia2 = new ArrayList<Negociacao>();
 	}
 
 }
